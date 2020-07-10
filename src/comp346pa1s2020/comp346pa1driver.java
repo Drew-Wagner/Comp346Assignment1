@@ -10,8 +10,8 @@ package comp346pa1s2020;
  * @author Kerly Titus
  */
 
-import java.io.File;
-import java.util.Scanner;
+import java.io.*;
+
 public class comp346pa1driver {
 
     /** normal
@@ -33,9 +33,17 @@ public class comp346pa1driver {
         Client objClient2 = new Client("receiving");            /* Start the receiving client */
         objClient2.start();
 
+        PrintWriter pw = null;
+
+        try
+        {
+            pw = new PrintWriter("results");
+        } catch(FileNotFoundException e){
+            e.printStackTrace();
+            System.exit(0);
+        }
 
             try {
-
                 objNetwork.join();
                 objServer.join();
                 objClient1.join();
@@ -43,7 +51,8 @@ public class comp346pa1driver {
             } catch (Exception ex) {
                 System.out.println(ex);
             }
-        
+
+            pw.close();
         // System.out.println("DONE!");
     }
 }
