@@ -315,13 +315,14 @@ public class Server extends Thread {
     public void run()
     {   Transactions trans = new Transactions();
     	long serverStartTime = 0, serverEndTime = 0;
-
+    	serverStartTime = System.currentTimeMillis();
     //	System.out.println("\n DEBUG : Server.run() - starting server thread " + objNetwork.getServerConnectionStatus());
     	
     	/* Implement the code for the run method */
         processTransactions(trans);
 
         objNetwork.disconnect(objNetwork.getServerIP());
+        serverEndTime = System.currentTimeMillis();
         System.out.println("\n Terminating server thread - " + " Running time " + (serverEndTime - serverStartTime) + " milliseconds");
     }
 }

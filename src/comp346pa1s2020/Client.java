@@ -209,11 +209,18 @@ public class Client extends Thread {
        // System.out.println("DEBUG - Running client - " + clientOperation);
 
         /* Implement the code for the run method */
-        if (clientOperation.equals("sending"))
+        if (clientOperation.equals("sending")) {
+        	sendClientStartTime = System.currentTimeMillis();
             sendTransactions();
-        else
+            sendClientEndTime = System.currentTimeMillis();
+            System.out.println("\n Terminating client sending thread - Running time " + (sendClientEndTime - sendClientStartTime) + " milliseconds");
+        }
+        else {
+        	receiveClientStartTime = System.currentTimeMillis();
             receiveTransactions(transact);
-
+            receiveClientEndTime = System.currentTimeMillis();
+            System.out.println("\n Terminating client receiving thread - Running time " + (receiveClientEndTime - receiveClientStartTime) + " milliseconds");
+        }
       //  System.out.println("DEBUG - Stopping client - " + clientOperation);
     }
 }
