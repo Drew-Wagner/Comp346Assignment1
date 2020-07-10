@@ -33,16 +33,17 @@ public class comp346pa1driver {
         Client objClient2 = new Client("receiving");            /* Start the receiving client */
         objClient2.start();
 
-        PrintWriter pw = null;
+        PrintStream o = null;
 
         try
         {
-            pw = new PrintWriter("results");
+            o = new PrintStream(new File("results"));
         } catch(FileNotFoundException e){
             e.printStackTrace();
             System.exit(0);
         }
 
+        System.setOut(o);
             try {
                 objNetwork.join();
                 objServer.join();
@@ -52,7 +53,7 @@ public class comp346pa1driver {
                 System.out.println(ex);
             }
 
-            pw.close();
+            o.close();
         // System.out.println("DONE!");
     }
 }
