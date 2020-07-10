@@ -126,7 +126,7 @@ public class Client extends Thread {
         }
         setNumberOfTransactions(i);        /* Record the number of transactions processed */
 
-        System.out.println("\n DEBUG : Client.readTransactions() - " + getNumberOfTransactions() + " transactions processed");
+        // System.out.println("\n DEBUG : Client.readTransactions() - " + getNumberOfTransactions() + " transactions processed");
 
         inputStream.close();
 
@@ -142,7 +142,7 @@ public class Client extends Thread {
         int i = 0;     /* index of transaction array */
 
         while (i < getNumberOfTransactions()) {
-            System.out.println(objNetwork.getInBufferStatus());
+           // System.out.println(objNetwork.getInBufferStatus());
             if (objNetwork.getInBufferStatus().equals("full")) {
                 Thread.yield();
             } else {
@@ -151,7 +151,7 @@ public class Client extends Thread {
 
                 transaction[i].setTransactionStatus("sent");   /* Set current transaction status */
 
-                System.out.println("\n DEBUG : Client.sendTransactions() - sending transaction on account " + transaction[i].getAccountNumber());
+               // System.out.println("\n DEBUG : Client.sendTransactions() - sending transaction on account " + transaction[i].getAccountNumber());
 
                 objNetwork.send(transaction[i]);                            /* Transmit current transaction */
                 i++;
@@ -176,7 +176,7 @@ public class Client extends Thread {
 
                 objNetwork.receive(transact);                                /* Receive updated transaction from the network buffer */
 
-                System.out.println("\n DEBUG : Client.receiveTransactions() - receiving updated transaction on account " + transact.getAccountNumber());
+               // System.out.println("\n DEBUG : Client.receiveTransactions() - receiving updated transaction on account " + transact.getAccountNumber());
 
                 System.out.println(transact);                                /* Display updated transaction */
                 i++;
@@ -206,7 +206,7 @@ public class Client extends Thread {
         Transactions transact = new Transactions();
         long sendClientStartTime, sendClientEndTime, receiveClientStartTime, receiveClientEndTime;
 
-        System.out.println("DEBUG - Running client - " + clientOperation);
+       // System.out.println("DEBUG - Running client - " + clientOperation);
 
         /* Implement the code for the run method */
         if (clientOperation.equals("sending"))
@@ -214,6 +214,6 @@ public class Client extends Thread {
         else
             receiveTransactions(transact);
 
-        System.out.println("DEBUG - Stopping client - " + clientOperation);
+      //  System.out.println("DEBUG - Stopping client - " + clientOperation);
     }
 }
