@@ -7,7 +7,7 @@
 
  Activating network components for server...
 
- Inializing the Accounts database ...
+ Initializing the Accounts database ...
 
  Connecting server to network ...
 
@@ -121,7 +121,7 @@
 
  Account number 92018 Account Balance -250.0 Message done
 
- Terminating client sending thread - Running time 16 milliseconds
+ Terminating client sending thread - Running time 4 milliseconds
 
  Account number 42850 Account Balance 1000.0 Message done
 
@@ -165,11 +165,11 @@
 
  Account number 12535 Account Balance 750.0 Message done
 
- Terminating client receiving thread - Running time 19 milliseconds
+ Terminating client receiving thread - Running time 4 milliseconds
 
  Terminating network thread - Client disconnected Server disconnected
 
- Terminating server thread -  Running time 47 milliseconds
+ Terminating server thread -  Running time 14 milliseconds
 
  ------------------------- Test 2 -------------------------
 
@@ -179,7 +179,7 @@
 
  Activating network components for server...
 
- Inializing the Accounts database ...
+ Initializing the Accounts database ...
 
  Connecting server to network ...
 
@@ -295,7 +295,7 @@
 
  Account number 42850 Account Balance 1000.0 Message done
 
- Terminating client sending thread - Running time 17 milliseconds
+ Terminating client sending thread - Running time 2 milliseconds
 
  Account number 92716 Account Balance 1000.0 Message done
 
@@ -337,11 +337,11 @@
 
  Account number 12535 Account Balance 750.0 Message done
 
- Terminating client receiving thread - Running time 13 milliseconds
-
  Terminating network thread - Client disconnected Server disconnected
 
- Terminating server thread -  Running time 35 milliseconds
+ Terminating client receiving thread - Running time 2 milliseconds
+
+ Terminating server thread -  Running time 7 milliseconds
 
  ------------------------- Test 3 -------------------------
 
@@ -351,7 +351,7 @@
 
  Activating network components for server...
 
- Inializing the Accounts database ...
+ Initializing the Accounts database ...
 
  Connecting server to network ...
 
@@ -465,6 +465,8 @@
 
  Account number 92018 Account Balance -250.0 Message done
 
+ Terminating client sending thread - Running time 2 milliseconds
+
  Account number 42850 Account Balance 1000.0 Message done
 
  Account number 92716 Account Balance 1000.0 Message done
@@ -474,8 +476,6 @@
  Account number 60716 Account Balance 1000.0 Message done
 
  Account number 01823 Account Balance 860.0 Message done
-
- Terminating client sending thread - Running time 17 milliseconds
 
  Account number 13331 Account Balance 1500.0 Message done
 
@@ -509,10 +509,10 @@
 
  Account number 12535 Account Balance 750.0 Message done
 
- Terminating client receiving thread - Running time 12 milliseconds
-
- Terminating server thread -  Running time 31 milliseconds
-
  Terminating network thread - Client disconnected Server disconnected
+
+ Terminating client receiving thread - Running time 2 milliseconds
+
+ Terminating server thread -  Running time 6 milliseconds
 
  Since there are processes performing OS and user tasks at the same time as our Java program, the OS does not always interleave the threads in the same way. The threads thus do not always execute in the exact same order, nor yield for the same number of CPU cycles with each test run.
